@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Sauce</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/png" href="icons8_Apple_Jam_24px.png">
+    </head>
+
+    <body>
+        <script type="text/javascript" src="script.js"></script>
+
+        <div class="container">
+            <div class="sidebar">
+             <span class="logo">S</span>
+             <a class="logo-expand" href="#">Apple Sauce</a>
+             <div class="side-wrapper">
+              <div class="side-title">MENU</div>
+              <div class="side-menu">
+               <a id="liby" class="sidebar-link library" href="index.html">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                 <path d="M9.135 20.773v-3.057c0-.78.637-1.414 1.423-1.414h2.875c.377 0 .74.15 1.006.414.267.265.417.625.417 1v3.057c-.002.325.126.637.356.867.23.23.544.36.87.36h1.962a3.46 3.46 0 002.443-1 3.41 3.41 0 001.013-2.422V9.867c0-.735-.328-1.431-.895-1.902l-6.671-5.29a3.097 3.097 0 00-3.949.072L3.467 7.965A2.474 2.474 0 002.5 9.867v8.702C2.5 20.464 4.047 22 5.956 22h1.916c.68 0 1.231-.544 1.236-1.218l.027-.009z" />
+                </svg>
+                Library
+               </a>
+               <a id="play" class="sidebar-link playlists is-active" href="#" onclick="openPlaylists()">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                 <path fill-rule="evenodd" clip-rule="evenodd" d="M10.835 12.007l.002.354c.012 1.404.096 2.657.242 3.451 0 .015.16.802.261 1.064.16.38.447.701.809.905a2 2 0 00.91.219c.249-.012.66-.137.954-.242l.244-.094c1.617-.642 4.707-2.74 5.891-4.024l.087-.09.39-.42c.245-.322.375-.715.375-1.138 0-.379-.116-.758-.347-1.064-.07-.099-.18-.226-.28-.334l-.379-.397c-1.305-1.321-4.129-3.175-5.593-3.79 0-.013-.91-.393-1.343-.407h-.057c-.665 0-1.286.379-1.603.991-.087.168-.17.496-.233.784l-.114.544c-.13.874-.216 2.216-.216 3.688zm-6.332-1.525C3.673 10.482 3 11.162 3 12a1.51 1.51 0 001.503 1.518l3.7-.328c.65 0 1.179-.532 1.179-1.19 0-.658-.528-1.191-1.18-1.191l-3.699-.327z" />
+                </svg>
+                Playlists
+               </a>
+              </div>
+             </div>
+             <div class="side-wrapper">
+              <div class="side-title">QUICK PLAYLISTS</div>
+              <div class="side-menu">
+              </div>
+             </div>
+            </div>
+            <div class="wrapper">
+             <div class="header">
+              <div class="search-bar">
+               <input type="text" placeholder="Search">
+              </div>
+              <div class="user-settings">
+               <img class="user-img" src="https://icons-for-free.com/download-icon-avatar+person+profile+user+icon-1320166578424287581_512.png" alt="">
+               <div class="user-name">User</div>
+               <svg viewBox="0 0 492 492" fill="currentColor">
+                <path d="M484.13 124.99l-16.11-16.23a26.72 26.72 0 00-19.04-7.86c-7.2 0-13.96 2.79-19.03 7.86L246.1 292.6 62.06 108.55c-5.07-5.06-11.82-7.85-19.03-7.85s-13.97 2.79-19.04 7.85L7.87 124.68a26.94 26.94 0 000 38.06l219.14 219.93c5.06 5.06 11.81 8.63 19.08 8.63h.09c7.2 0 13.96-3.57 19.02-8.63l218.93-219.33A27.18 27.18 0 00492 144.1c0-7.2-2.8-14.06-7.87-19.12z"></path>
+               </svg>
+               <div class="notify">
+                <div class="notification"></div>
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                 <path fill-rule="evenodd" clip-rule="evenodd" d="M18.707 8.796c0 1.256.332 1.997 1.063 2.85.553.628.73 1.435.73 2.31 0 .874-.287 1.704-.863 2.378a4.537 4.537 0 01-2.9 1.413c-1.571.134-3.143.247-4.736.247-1.595 0-3.166-.068-4.737-.247a4.532 4.532 0 01-2.9-1.413 3.616 3.616 0 01-.864-2.378c0-.875.178-1.682.73-2.31.754-.854 1.064-1.594 1.064-2.85V8.37c0-1.682.42-2.781 1.283-3.858C7.861 2.942 9.919 2 11.956 2h.09c2.08 0 4.204.987 5.466 2.625.82 1.054 1.195 2.108 1.195 3.745v.426zM9.074 20.061c0-.504.462-.734.89-.833.5-.106 3.545-.106 4.045 0 .428.099.89.33.89.833-.025.48-.306.904-.695 1.174a3.635 3.635 0 01-1.713.731 3.795 3.795 0 01-1.008 0 3.618 3.618 0 01-1.714-.732c-.39-.269-.67-.694-.695-1.173z" />
+                </svg>
+               </div>
+              </div>
+             </div>
+             <div class="main-container">
+              <div class="main-header anim" style="--delay: 0s">Playlists</div>
+              <div class="main-blogs">
+                <div class="main-blog anim" style="--delay: .1s">
+                 <div class="main-blog__title">How to do Basic Jumping and how to landing safely</div>
+                 <div class="main-blog__author">
+                  <div class="author-img__wrapper">
+                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check">
+                    <path d="M20 6L9 17l-5-5" />
+                   </svg>
+                   <img class="author-img" src="https://images.unsplash.com/photo-1560941001-d4b52ad00ecc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" />
+                  </div>
+                  <div class="author-detail">
+                   <div class="author-name">Thomas Hope</div>
+                   <div class="author-info">53K views <span class="seperate"></span>2 weeks ago</div>
+                  </div>
+                 </div>
+                 <div class="main-blog__time">7 min</div>
+                </div>
+                <div class="main-blog anim" style="--delay: .2s">
+                 <div class="main-blog__title">Skateboard Tips You need to know</div>
+                 <div class="main-blog__author tips">
+                  <div class="main-blog__time">7 min</div>
+                  <div class="author-img__wrapper">
+                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check">
+                    <path d="M20 6L9 17l-5-5" />
+                   </svg>
+                   <img class="author-img" src="https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzl8fG1lbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
+                  </div>
+                  <div class="author-detail">
+                   <div class="author-name">Tony Andrew</div>
+                   <div class="author-info">53K views <span></span>2 weeks ago</div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+             </div>
+            </div>
+           </div>
+
+        <script>
+            const electron = require('electron');
+            const {ipcRenderer} = electron;
+        </script>
+    </body>
+</html>
