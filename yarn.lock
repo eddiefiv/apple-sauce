@@ -552,6 +552,11 @@
   "resolved" "https://registry.npmjs.org/crypto-random-string/-/crypto-random-string-2.0.0.tgz"
   "version" "2.0.0"
 
+"custom-electron-titlebar@^4.1.0":
+  "integrity" "sha512-5iHiOAF+m97ZDBqhrn1KRtQr7j4ALEERNVqljryVx2tMcFv535wAZs4Tj7XSrbALJLHIixKvXQyypnvEf27NhA=="
+  "resolved" "https://registry.npmjs.org/custom-electron-titlebar/-/custom-electron-titlebar-4.1.0.tgz"
+  "version" "4.1.0"
+
 "debug@^2.2.0", "debug@^2.6.8", "debug@^2.6.9":
   "integrity" "sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA=="
   "resolved" "https://registry.npmjs.org/debug/-/debug-2.6.9.tgz"
@@ -763,7 +768,7 @@
     "lazy-val" "^1.0.5"
     "mime" "^2.5.2"
 
-"electron@latest":
+"electron@>10", "electron@latest":
   "integrity" "sha512-AN+CKalzA57beuvuI90PVgW/yj6zjw7rpb1h8FvIwBJ3toDC3x0Plfzbzh4Ondecbjci7pSg/NA5ngOk804WIQ=="
   "resolved" "https://registry.npmjs.org/electron/-/electron-18.2.0.tgz"
   "version" "18.2.0"
