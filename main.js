@@ -1,10 +1,16 @@
 const electron = require('electron');
 const url = require('url');
 const path = require('path');
+const { contextIsolated } = require('process');
 
 const {app, BrowserWindow, Menu} = electron;
 
 let mainWindow;
+
+
+
+
+
 
 // PACKAGE COMMAND
 //electron-packager . sauce --overwrite --asar=true --platform=win32 --arch=ia32 --icon=icons/icons8_Apple_Jam_48px.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName="Apple Sauce"
@@ -21,10 +27,10 @@ app.on('ready', function() {
         resizable: true,
         autoHideMenuBar: true,
         titleBarStyle: 'hidden',
-        titleBarOverlay: {
-            color: '#1b1b1b',
-            symbolColor: "white"
-        },
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: true
+        }
     });
 
     mainWindow.maximize();
@@ -35,7 +41,7 @@ app.on('ready', function() {
         slashes: true
     }));
 
-//    mainWindow.loadURL('https://vuejs.org/v2/guide/transitions.html');
+//    mainWindow.loadURL('https://rawcdn.githack.com/eddiefiv/apple-sauce/main/index.html');
 
     // Quit app when closed
     mainWindow.on('closed', function() {

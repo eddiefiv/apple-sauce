@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="fuzzy-wuzzy">
     <head>
         <meta charset="utf-8">
 
@@ -14,18 +14,69 @@
         <div id="modal-container" onclick="">
             <div class="modal-background">
               <div id="modal" class="modal">
-                <h2>Change Color Profile</h2>
+<!--                <h2>Change Color Profile</h2>
                 <hr>
                 <ul>
                     <li onclick="setTheme('wintergreen')"><a id="wg-btn">Wintergreen</a></li>
                     <li onclick="setTheme('ocean-green')"><a id="og-btn">Ocean Green</a></li>
                     <li onclick="setTheme('fuzzy-wuzzy')"><a id="fw-btn">Fuzzy Wuzzy (｡◕‿◕｡)</a></li>
-                </ul>
+                </ul> -->
+                <div class="sidebar-modal-sidebar">
+                    <span class="logo"></span>
+                    <div class="logo-area">
+                        <a class="logo-expand" style="cursor: default">Settings</a>
+                    </div>
+                    <div class="side-wrapper">
+                        <div class="side-menu">
+                            <a id="general-btn" class="sidebar-link general is-active" href="#" onclick="changeSettingsPanel('general')">General</a>
+                            <a id="profiles-btn" class="sidebar-link color-profile" href="#" onclick="changeSettingsPanel('color-profiles')">Color Profiles</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrapper-modal-wrap">
+                    <div id="general-container" class="main-container-modal general modal-cont active-panel">
+                        <div class="main-header-modal anim">General</div>
+                    </div>
+                    <div id="profiles-container" class="main-container-modal color-profiles modal-cont">
+                        <div class="main-header-modal anim">Color Profiles</div>
+                        <div class="main-content anim">
+                            <div class="sub-header">Modify app wide color profiles. More to come ;)</div>
+                            <div class="settings-area">
+                                <div class="select-option color-profiles">
+                                    <p>Wintergreen:</p>
+                                    <a id="wg-btn" href="#" class="wintergreen" onclick="setTheme('wintergreen')">Select</a>
+                                </div>
+                                <div class="select-option color-profiles ocean-green">
+                                    <p>Ocean Green:</p>
+                                    <a id="og-btn" href="#" class="ocean-green" onclick="setTheme('ocean-green')">Select</a>
+                                </div>
+                                <div class="select-option color-profiles fuzzy-wuzzy">
+                                    <p>Fuzzy Wuzzy:</p>
+                                    <a id="fw-btn" href="#" class="fuzzy-wuzzy is-active" onclick="setTheme('fuzzy-wuzzy')">Select</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
               </div>
             </div>
           </div>
 
         <div id="cont" class="container">
+<!--            <div class="topBar">
+                <div class="titleBar">
+                    <button id="showHideMenus" class="toggleButton"></button>
+                    <img src="icons/icons8_Apple_Jam_48px.ico">
+                    <div class="title">
+                        My App Top Bar
+                    </div>
+                </div>
+                <div class="titleBarBtns">
+                    <button id="minimizeBtn" class="topBtn minimizeBtn"></button>
+                    <button id="maxResBtn" class="topBtn maximizeBtn"></button>
+                    <button id="closeBtn" class="topBtn closeBtn"></button>
+                </div>
+            </div> -->
             <div class="sidebar">
              <span class="logo"></span>
              <div class="logo-area">
@@ -61,7 +112,7 @@
                 <ul>
                     <li><a href="#"></a>
                         <ul>
-                            <li><a href="#" onclick="openModal()">Color Profiles</a></li>
+                            <li><a href="#" onclick="openModal()">Settings</a></li>
                         </ul>        
                     </li>
                 </ul>
