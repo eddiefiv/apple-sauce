@@ -35,24 +35,41 @@ document.addEventListener('click', function(e) {
     }
 });
 
+function changeSettingsPanel(panel) {
+    if (panel == "general") {
+        document.getElementById("general-btn").className = "sidebar-link general is-active";
+        document.getElementById("profiles-btn").className = "sidebar-link color-profile";
+
+        document.getElementById("general-container").className = "main-container-modal general modal-cont active-panel";
+        document.getElementById("profiles-container").className = "main-container-modal color-profiles modal-cont";
+    }
+    else if (panel == "color-profiles") {
+        document.getElementById("general-btn").className = "sidebar-link general";
+        document.getElementById("profiles-btn").className = "sidebar-link color-profile is-active";
+
+        document.getElementById("general-container").className = "main-container-modal general modal-cont";
+        document.getElementById("profiles-container").className = "main-container-modal color-profiles modal-cont active-panel";
+    }
+}
+
 function setTheme(theme) {
     document.documentElement.className = theme;
 
     setTimeout(function() {
         if (theme == "wintergreen") {
-            document.getElementById("wg-btn").className = "wg-btn active";
-            document.getElementById("og-btn").className = "og-btn";
-            document.getElementById("fw-btn").className = "fw-btn";
+            document.getElementById("wg-btn").className = "wintergreen is-active";
+            document.getElementById("og-btn").className = "ocean-green";
+            document.getElementById("fw-btn").className = "fuzzy-wuzzy";
         }
         else if (theme == "ocean-green") {
-            document.getElementById("wg-btn").className = "wg-btn";
-            document.getElementById("og-btn").className = "og-btn active";
-            document.getElementById("fw-btn").className = "fw-btn";
+            document.getElementById("wg-btn").className = "wintergreen";
+            document.getElementById("og-btn").className = "ocean-green is-active";
+            document.getElementById("fw-btn").className = "fuzzy-wuzzy";
         }
         else if (theme == "fuzzy-wuzzy") {
-            document.getElementById("wg-btn").className = "wg-btn";
-            document.getElementById("og-btn").className = "og-btn";
-            document.getElementById("fw-btn").className = "fw-btn active";
+            document.getElementById("wg-btn").className = "wintergreen";
+            document.getElementById("og-btn").className = "ocean-green";
+            document.getElementById("fw-btn").className = "fuzzy-wuzzy is-active";
         }
     }, 100);
     
