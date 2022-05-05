@@ -1,3 +1,4 @@
+[![Banner](https://cdn.discordapp.com/attachments/683847785711534182/971499864712167434/AppleSauce_Logo1.png)
 
 # Apple Sauce
 
