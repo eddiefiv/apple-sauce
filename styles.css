@@ -498,7 +498,6 @@ body.modal-active {
 	background-color: rgba(22, 22, 22, .8);
 	border-radius: 2px;
 }
-li > a:after { content:  ' ▼'; }
 li > a:only-child:after { content: ''; }
  .user-settings {
 	 display: flex;
