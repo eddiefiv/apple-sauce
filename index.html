@@ -38,6 +38,18 @@
                         <div class="main-header-modal anim">General</div>
                         <div class="main-content anim" style="--delay: .2s">
                             <div class="sub-header">Settings will come later, this menu still needs ui work obv</div>
+                            <div class="settings-area">
+                                <div class="option general">
+                                    <p>Branch: </p>
+                                    <button type="button" id="branch-dropdown-btn" class="dropdown-btn">
+                                        <p id="branch-dropdown-text" class="search-large">Main</p>
+                                    </button>
+                                    <ul id="branch-dropdown-items" class="dropdown-items">
+                                        <li onclick="changeBranch('Main')">Main</li>
+                                        <li onclick="changeBranch('Dev')">Dev</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>  
                     </div>
                     <div id="profiles-container" class="main-container-modal color-profiles modal-cont">
@@ -45,17 +57,17 @@
                         <div class="main-content anim" style="--delay: .2s">
                             <div class="sub-header">Modify app wide color profiles. More to come ;)</div>
                             <div class="settings-area">
-                                <div class="select-option color-profiles">
+                                <div class="option color-profiles">
                                     <p>Wintergreen:</p>
-                                    <a id="wg-btn" href="#" class="wintergreen" onclick="setTheme('wintergreen')" style="margin-left: 15.5%">Select</a>
+                                    <a id="wg-btn" href="#" class="select" onclick="setTheme('wintergreen')" style="margin-left: 8%">Select</a>
                                 </div>
-                                <div class="select-option color-profiles ocean-green">
+                                <div class="option color-profiles ocean-green">
                                     <p>Ocean Green:</p>
-                                    <a id="og-btn" href="#" class="ocean-green" onclick="setTheme('ocean-green')">Select</a>
+                                    <a id="og-btn" href="#" class="select" onclick="setTheme('ocean-green')">Select</a>
                                 </div>
-                                <div class="select-option color-profiles fuzzy-wuzzy">
+                                <div class="option color-profiles fuzzy-wuzzy">
                                     <p>Fuzzy Wuzzy:</p>
-                                    <a id="fw-btn" href="#" class="fuzzy-wuzzy is-active" onclick="setTheme('fuzzy-wuzzy')">Select</a>
+                                    <a id="fw-btn" href="#" class="select is-active" onclick="setTheme('fuzzy-wuzzy')">Select</a>
                                 </div>
                             </div>
                         </div>

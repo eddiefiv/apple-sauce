@@ -705,20 +705,20 @@ body.modal-active {
 	font-weight: 400;
 	text-align: left;
 }
-.settings-area .select-option {
+.settings-area .option {
 	display: flex;
 	padding-bottom: 3%;
 }
-.settings-area .select-option p {
+.settings-area .option p {
 	float: left;
 	margin: 0;
 	padding-top: 1%;
 }
-.settings-area .select-option a {
-	margin-left: 15%;
+.settings-area .option .select {
+	margin-left: 7.5%;
 	text-decoration: none;
 	border: solid 1px var(--border-color);
-	border-radius: 2px;
+	border-radius: 3px;
 	padding-left: 3%;
 	padding-right: 3%;
 	padding-top: 1%;
@@ -726,32 +726,92 @@ body.modal-active {
 	color: white;
 	transition: 0.15s;
 }
-.settings-area .select-option .wintergreen {
+.settings-area .option #wg-btn {
 	background-color: transparent;
 }
-.settings-area .select-option .wintergreen:hover {
+.settings-area .option #wg-btn:hover {
 	box-shadow: 0 5px 35px 0px var(--wintergreen-const);
 }
-.settings-area .select-option .wintergreen.is-active {
+.settings-area .option #wg-btn.select.is-active {
 	background-color: var(--wintergreen-const);
 }
-.settings-area .select-option .ocean-green {
+.settings-area .option #og-btn {
 	background-color: transparent;
 }
-.settings-area .select-option .ocean-green:hover {
+.settings-area .option #og-btn:hover {
 	box-shadow: 0 5px 35px 0px var(--ocean-green-const);
 }
-.settings-area .select-option .ocean-green.is-active {
+.settings-area .option #og-btn.select.is-active {
 	background-color: var(--ocean-green-const);
 }
-.settings-area .select-option .fuzzy-wuzzy {
+.settings-area .option #fw-btn {
 	background-color: transparent;
 }
-.settings-area .select-option .fuzzy-wuzzy:hover {
+.settings-area .option #fw-btn:hover {
 	box-shadow: 0 5px 35px 0px var(--fuzzy-wuzzy-const);
 }
-.settings-area .select-option .fuzzy-wuzzy.is-active {
+.settings-area .option #fw-btn.select.is-active {
 	background-color: var(--fuzzy-wuzzy-const);
+}
+.settings-area .option .dropdown-btn {
+	margin-left: 11%;
+	text-decoration: none;
+	border: none;
+	border-radius: 3px;
+	padding-left: 3%;
+	padding-right: 3%;
+	padding-top: 2%;
+	padding-bottom: 1%;
+	display: inline-block;
+	width: 8%;
+	padding: 0px;
+	position: relative;
+	float: left;
+	border-right: 0px;
+	background: rgba(16, 16, 16, .8) url("http://seodesigns.com/projects/TD/images/main-bullet.png") 90% 50% no-repeat;background-size:6px 6px;cursor: pointer;
+}
+.search-large {
+	font-size: 16px;
+	margin: 0px;
+	color: white;
+	position: relative;
+	left: 25%;
+	display: inline-block;
+	font-weight: 600;
+	text-align: left;
+}
+ul.dropdown-items {
+	width: 150px;
+	position: absolute; 
+	background: rgba(16, 16, 16, .8);
+	margin: 0;
+	left: 15.7%;
+	top: 75%;
+	border-radius: 2px;
+	-moz-border-radius: 2px; 
+	-webkit-border-radius: 2px;
+	padding: 14px 0px;
+	display: none;
+	-webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.3);
+	box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.3);
+}
+.dropdown-items.active {
+	display: block;
+}
+.dropdown-items li {
+	font-size: 16px;
+	font-weight: 600;
+	padding: 6px 0px;
+	display: block;
+	padding-left: 16px;
+	cursor: pointer;
+	transition: height 0.25s ease-in-out;
+	overflow: hidden;
+	color: white;
+}
+.dropdown-items li:hover {
+	background:#f8f8f8;
 }
  .main-blogs {
 	 padding-top: 10px;

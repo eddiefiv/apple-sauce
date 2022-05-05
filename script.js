@@ -1,4 +1,5 @@
 var isModalOpen = false;
+var isDropdownOpen = false;
 
 const audioPlayer = document.querySelector(".audio-player");
 
@@ -31,21 +32,44 @@ function closeModal() {
 document.addEventListener('click', function(e) {
     var container = document.getElementById('modal');
     var playback_container = document.getElementById('playback');
-    const timeline = document.getElementById("timeline");
+    var dropdown_btn = document.getElementById('branch-dropdown-btn');
+    const timeline = document.getElementById('timeline');
+    const dropdown_items = document.getElementById("branch-dropdown-items");
 
     if (!container.contains(e.target)) {
-        if (isModalOpen == true) {
+        if (isModalOpen == true && isDropdownOpen == false) {
             closeModal();
         }
-        else if (playback_container.contains(e.target)) {
+        else if (isDropdownOpen == true) {
+            dropdown_items.classList.remove('active');
+
+            isDropdownOpen = false;
+
+            closeModal();
+        }
+    }
+    else if (playback_container.contains(e.target)) {
             const timelineWidth = window.getComputedStyle(timeline).width;
             const timeToSeek = e.offsetX / parseInt(timelineWidth) * 90;
             const progressBar = document.getElementById("progress");
 
             progressBar.style.width = timeToSeek / 90 * 100 + "%";
-        }
+    }
+    else if (isDropdownOpen == false && dropdown_btn.contains(e.target)) {
+        dropdown_items.classList.add('active');
+
+        isDropdownOpen = true;
+    }
+    else if (isDropdownOpen == true) {
+        dropdown_items.classList.remove('active');
+
+        isDropdownOpen = false;
     }
 });
+
+function changeBranch(branch) {
+    document.getElementById("branch-dropdown-text").innerHTML = branch;
+}
 
 function changeSettingsPanel(panel) {
     if (panel == "general") {
@@ -69,19 +93,19 @@ function setTheme(theme) {
 
     setTimeout(function() {
         if (theme == "wintergreen") {
-            document.getElementById("wg-btn").className = "wintergreen is-active";
-            document.getElementById("og-btn").className = "ocean-green";
-            document.getElementById("fw-btn").className = "fuzzy-wuzzy";
+            document.getElementById("wg-btn").className = "select is-active";
+            document.getElementById("og-btn").className = "select";
+            document.getElementById("fw-btn").className = "select";
         }
         else if (theme == "ocean-green") {
-            document.getElementById("wg-btn").className = "wintergreen";
-            document.getElementById("og-btn").className = "ocean-green is-active";
-            document.getElementById("fw-btn").className = "fuzzy-wuzzy";
+            document.getElementById("wg-btn").className = "select";
+            document.getElementById("og-btn").className = "select is-active";
+            document.getElementById("fw-btn").className = "select";
         }
         else if (theme == "fuzzy-wuzzy") {
-            document.getElementById("wg-btn").className = "wintergreen";
-            document.getElementById("og-btn").className = "ocean-green";
-            document.getElementById("fw-btn").className = "fuzzy-wuzzy is-active";
+            document.getElementById("wg-btn").className = "select";
+            document.getElementById("og-btn").className = "select";
+            document.getElementById("fw-btn").className = "select is-active";
         }
     }, 100);
     

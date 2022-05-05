@@ -13,7 +13,8 @@
   "licence": "MIT",
   "dependencies": {
     "custom-electron-titlebar": "^4.1.0",
-    "electron-packager": "^15.5.1"
+    "electron-packager": "^15.5.1",
+    "jquery": "^3.6.0"
   },
   "devDependencies": {
     "electron": "latest",
