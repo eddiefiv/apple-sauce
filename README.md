@@ -1,5 +1,3 @@
-[![Banner](https://cdn.discordapp.com/attachments/683847785711534182/971499864712167434/AppleSauce_Logo1.png)
-
 # Apple Sauce
 
 App that acts as a music player using MusicKitJS and electron to display the gui using HTML, CSS and JS
