@@ -1,5 +1,7 @@
 var isModalOpen = false;
 
+const audioPlayer = document.querySelector(".audio-player");
+
 function openPlaylists() {
     document.getElementById("play").className = "sidebar-link playlists is-active";
     document.getElementById("liby").className = "sidebar-link library";
@@ -28,9 +30,19 @@ function closeModal() {
 
 document.addEventListener('click', function(e) {
     var container = document.getElementById('modal');
+    var playback_container = document.getElementById('playback');
+    const timeline = document.getElementById("timeline");
+
     if (!container.contains(e.target)) {
         if (isModalOpen == true) {
             closeModal();
+        }
+        else if (playback_container.contains(e.target)) {
+            const timelineWidth = window.getComputedStyle(timeline).width;
+            const timeToSeek = e.offsetX / parseInt(timelineWidth) * 90;
+            const progressBar = document.getElementById("progress");
+
+            progressBar.style.width = timeToSeek / 90 * 100 + "%";
         }
     }
 });
