@@ -1,4 +1,3 @@
-
 # Apple Sauce
 
 App that acts as a music player using MusicKitJS and electron to display the gui using HTML, CSS and JS
