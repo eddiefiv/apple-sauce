@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Custom made app utilizing Apple's musickit for Apple Music integration",
   "main": "main.js",
-  "type": "module",
   "scripts": {
     "postinstall": "install-app-deps",
     "start": "electron .",

@@ -2,14 +2,10 @@ const electron = require('electron');
 const url = require('url');
 const path = require('path');
 const { contextIsolated } = require('process');
-import { setupTitlebar, attachTitlebarToWindow } from "custom-electron-titlebar/main";
 
 const {app, BrowserWindow, Menu} = electron;
 
 let mainWindow;
-
-// Setup titlebar process
-setupTitlebar();
 
 
 
@@ -35,8 +31,6 @@ app.on('ready', function() {
             contextIsolation: true
         }
     });
-
-    attachTitlebarToWindow(mainWindow)
 
     mainWindow.maximize();
     // Load html into window

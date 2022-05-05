@@ -498,7 +498,13 @@ body.modal-active {
 	background-color: rgba(22, 22, 22, .8);
 	border-radius: 2px;
 }
-li > a:only-child:after { content: ''; }
+.settings-icon {
+	transition: transform .3s ease-in-out;
+	font-weight: 600;
+}
+.settings-icon:hover {
+	transform: rotate(90deg);
+}
  .user-settings {
 	 display: flex;
 	 align-items: center;
@@ -592,7 +598,7 @@ li > a:only-child:after { content: ''; }
 	font-size: 30px;
 	color: #fff;
 	font-weight: 700;
-	padding-top: 10px;
+	padding-top: 30px;
 	padding-bottom: 10px;
 	position: sticky;
 	text-align: left;
