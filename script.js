@@ -47,13 +47,13 @@ document.addEventListener('click', function(e) {
 
             closeModal();
         }
-    }
-    else if (playback_container.contains(e.target)) {
+        else if (playback_container.contains(e.target)) {
             const timelineWidth = window.getComputedStyle(timeline).width;
             const timeToSeek = e.offsetX / parseInt(timelineWidth) * 90;
             const progressBar = document.getElementById("progress");
-
+    
             progressBar.style.width = timeToSeek / 90 * 100 + "%";
+        }
     }
     else if (isDropdownOpen == false && dropdown_btn.contains(e.target)) {
         dropdown_items.classList.add('active');
@@ -66,10 +66,6 @@ document.addEventListener('click', function(e) {
         isDropdownOpen = false;
     }
 });
-
-function changeBranch(branch) {
-    document.getElementById("branch-dropdown-text").innerHTML = branch;
-}
 
 function changeSettingsPanel(panel) {
     if (panel == "general") {
@@ -108,5 +104,4 @@ function setTheme(theme) {
             document.getElementById("fw-btn").className = "select is-active";
         }
     }, 100);
-    
 }

@@ -45,8 +45,8 @@
                                         <p id="branch-dropdown-text" class="search-large">Main</p>
                                     </button>
                                     <ul id="branch-dropdown-items" class="dropdown-items">
-                                        <li onclick="changeBranch('Main')">Main</li>
-                                        <li onclick="changeBranch('Dev')">Dev</li>
+                                        <li id="main-branch" onclick="updateBranch('Main')">Main</li>
+                                        <li id="dev-branch" onclick="updateBranch('Dev')">Dev</li>
                                     </ul>
                                 </div>
                             </div>
@@ -182,9 +182,21 @@
             </div>
         </div>
 
-        <script>
+        <script type="text/javascript">
             const electron = require('electron');
-            const {ipcRenderer} = electron;
+            const {ipcRenderer} = require('electron');
+
+            function updateBranch(branch) {
+                alert("boo");
+                document.getElementById("branch-dropdown-text").innerHTML = branch;
+
+                if (branch == "Main") {
+                    ipcRenderer.send('branch_update_main');
+                }
+                else if (branch == "Dev") {
+                    ipcRenderer.send('branch_update_dev');
+                }
+            }
         </script>
     </body>
 </html>

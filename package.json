@@ -14,7 +14,9 @@
   "dependencies": {
     "custom-electron-titlebar": "^4.1.0",
     "electron-packager": "^15.5.1",
-    "jquery": "^3.6.0"
+    "express": "^4.18.1",
+    "jquery": "^3.6.0",
+    "python-shell": "^3.0.1"
   },
   "devDependencies": {
     "electron": "latest",
