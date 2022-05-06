@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" class="fuzzy-wuzzy">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Sauce</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/png" href="icons/icons8_Apple_Jam_48px.png">
+    </head>
+
+    <body id="body">
+        <script type="text/javascript" src="script.js"></script>
+
+        <div id="modal-container" onclick="">
+            <div class="modal-background">
+              <div id="modal" class="modal">
+<!--                <h2>Change Color Profile</h2>
+                <hr>
+                <ul>
+                    <li onclick="setTheme('wintergreen')"><a id="wg-btn">Wintergreen</a></li>
+                    <li onclick="setTheme('ocean-green')"><a id="og-btn">Ocean Green</a></li>
+                    <li onclick="setTheme('fuzzy-wuzzy')"><a id="fw-btn">Fuzzy Wuzzy (｡◕‿◕｡)</a></li>
+                </ul> -->
+                <div class="sidebar-modal-sidebar">
+                    <span class="logo"></span>
+                    <div class="logo-area">
+                        <a class="logo-expand" style="cursor: default">Settings</a>
+                    </div>
+                    <div class="side-wrapper">
+                        <div class="side-menu">
+                            <a id="general-btn" class="sidebar-link general is-active" href="#" onclick="changeSettingsPanel('general')">General</a>
+                            <a id="profiles-btn" class="sidebar-link color-profile" href="#" onclick="changeSettingsPanel('color-profiles')">Color Profiles</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrapper-modal-wrap">
+                    <div id="general-container" class="main-container-modal general modal-cont active-panel">
+                        <div class="main-header-modal anim">General</div>
+                        <div class="main-content anim">
+                            <div class="sub-header">Settings will come later, this menu still needs ui work obv</div>
+                        </div>  
+                    </div>
+                    <div id="profiles-container" class="main-container-modal color-profiles modal-cont">
+                        <div class="main-header-modal anim">Color Profiles</div>
+                        <div class="main-content anim">
+                            <div class="sub-header">Modify app wide color profiles. More to come ;)</div>
+                            <div class="settings-area">
+                                <div class="select-option color-profiles">
+                                    <p>Wintergreen:</p>
+                                    <a id="wg-btn" href="#" class="wintergreen" onclick="setTheme('wintergreen')" style="margin-left: 15.5%">Select</a>
+                                </div>
+                                <div class="select-option color-profiles ocean-green">
+                                    <p>Ocean Green:</p>
+                                    <a id="og-btn" href="#" class="ocean-green" onclick="setTheme('ocean-green')">Select</a>
+                                </div>
+                                <div class="select-option color-profiles fuzzy-wuzzy">
+                                    <p>Fuzzy Wuzzy:</p>
+                                    <a id="fw-btn" href="#" class="fuzzy-wuzzy is-active" onclick="setTheme('fuzzy-wuzzy')">Select</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <div id="cont" class="container">
+<!--            <div class="topBar">
+                <div class="titleBar">
+                    <button id="showHideMenus" class="toggleButton"></button>
+                    <img src="icons/icons8_Apple_Jam_48px.ico">
+                    <div class="title">
+                        My App Top Bar
+                    </div>
+                </div>
+                <div class="titleBarBtns">
+                    <button id="minimizeBtn" class="topBtn minimizeBtn"></button>
+                    <button id="maxResBtn" class="topBtn maximizeBtn"></button>
+                    <button id="closeBtn" class="topBtn closeBtn"></button>
+                </div>
+            </div> -->
+            <div class="sidebar">
+             <span class="logo"></span>
+             <div class="logo-area">
+                <img class="logo-img" src="icons/icons8_Apple_Jam_48px.png">
+                <a class="logo-expand" href="#">Apple Sauce</a>
+             </div>
+             <div class="side-wrapper">
+              <div class="side-title">MENU</div>
+              <div class="side-menu">
+               <a id="play" class="sidebar-link playlists is-active" href="#" onclick="openPlaylists()">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                 <path fill-rule="evenodd" clip-rule="evenodd" d="M10.835 12.007l.002.354c.012 1.404.096 2.657.242 3.451 0 .015.16.802.261 1.064.16.38.447.701.809.905a2 2 0 00.91.219c.249-.012.66-.137.954-.242l.244-.094c1.617-.642 4.707-2.74 5.891-4.024l.087-.09.39-.42c.245-.322.375-.715.375-1.138 0-.379-.116-.758-.347-1.064-.07-.099-.18-.226-.28-.334l-.379-.397c-1.305-1.321-4.129-3.175-5.593-3.79 0-.013-.91-.393-1.343-.407h-.057c-.665 0-1.286.379-1.603.991-.087.168-.17.496-.233.784l-.114.544c-.13.874-.216 2.216-.216 3.688zm-6.332-1.525C3.673 10.482 3 11.162 3 12a1.51 1.51 0 001.503 1.518l3.7-.328c.65 0 1.179-.532 1.179-1.19 0-.658-.528-1.191-1.18-1.191l-3.699-.327z" />
+                </svg>
+                Playlists
+               </a>
+              </div>
+             </div>
+             <div class="side-wrapper">
+              <div class="side-title">QUICK PLAYLISTS</div>
+              <div class="side-menu">
+              </div>
+             </div>
+            </div>
+            <div class="wrapper">
+             <div class="header">
+              <div class="search-bar">
+               <input type="text" placeholder="Search">
+              </div>
+              <div class="user-settings">
+               <img class="user-img" src="https://icons-for-free.com/download-icon-avatar+person+profile+user+icon-1320166578424287581_512.png" alt="">
+               <div class="user-name">User</div>
+               <nav class="settings">
+                <ul>
+                    <a href="#" onclick="openModal()">⚙</a>
+                </ul>
+               </nav>
+              </div>
+             </div>
+             <div class="main-container">
+              <div class="main-header anim" style="--delay: 0s">Playlists</div>
+              <div class="main-blogs">
+                <div class="main-blog anim" style="--delay: .1s">
+                 <div class="main-blog__title">Playlist 1</div>
+                </div>
+                <div class="main-blog anim" style="--delay: .1s">
+                 <div class="main-blog__title">Playlist 2</div>
+                </div>
+                <div class="main-blog anim" style="--delay: .1s">
+                    <div class="main-blog__title">Playlist numero tres</div>
+                </div>
+                <div class="main-blog anim" style="--delay: .1s">
+                    <div class="main-blog__title">Alistplay umbernay eethray</div>
+                </div>
+                <div class="main-blog anim" style="--delay: .1s">
+                    <div class="main-blog__title">Filler playlist</div>
+                </div>
+                <div class="main-blog anim" style="--delay: .1s">
+                    <div class="main-blog__title">Another one</div>
+                </div>
+                <div class="main-blog anim" style="--delay: .1s">
+                    <div class="main-blog__title">ಠ_ಠ</div>
+                </div>
+               </div>
+             </div>
+             <div class="bottomBar anim">
+                <div class="songInfo anim" style="--delay: .2s">
+                    <div class="songCover">
+                        <img src="images/IMG_0751.png"/>
+                    </div>
+                    <div class="songManifest">
+                        <div class="songName">Song Title</div>
+                        <div class="songArtist">Artist Name</div>
+                    </div>
+                </div>
+                <div class="playback">
+                    <div class="progressBar">
+                        
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <script>
+            const electron = require('electron');
+            const {ipcRenderer} = electron;
+        </script>
+    </body>
+</html>

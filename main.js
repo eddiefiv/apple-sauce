@@ -1,6 +1,8 @@
 const electron = require('electron');
 const url = require('url');
 const path = require('path');
+const https = require('https');
+const fs = require('fs');
 const { contextIsolated } = require('process');
 
 const {app, BrowserWindow, Menu} = electron;
@@ -18,6 +20,16 @@ let mainWindow;
 
 
 
+const file = fs.createWriteStream("gitindex.html");
+const request = https.get("https://raw.githubusercontent.com/eddiefiv/apple-sauce/main/index.html", function(response) {
+   response.pipe(file);
+
+   // after download completed close filestream
+   file.on("finish", () => {
+       file.close();
+       console.log("Download Completed");
+   });
+});
 
 // Listen for app to be ready
 app.on('ready', function() {
@@ -35,7 +47,7 @@ app.on('ready', function() {
     mainWindow.maximize();
     // Load html into window
     mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'index.html'),
+        pathname: path.join(__dirname, 'gitindex.html'),
         protocol: 'file',
         slashes: true
     }));
