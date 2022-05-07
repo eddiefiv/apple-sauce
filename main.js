@@ -30,7 +30,8 @@ app.on('ready', function() {
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: true
-        }
+        },
+        show: false
     });
     // Load html into window
     mainWindow.loadURL(url.format({
@@ -38,6 +39,8 @@ app.on('ready', function() {
         protocol: 'file',
         slashes: true
     }));
+
+    mainWindow.setBackgroundColor('#161616');
 
     mainWindow.maximize();
 
@@ -48,6 +51,10 @@ app.on('ready', function() {
             throw err;
         }
     });*/
+
+    mainWindow.on('ready-to-show', function() {
+        mainWindow.show();
+    });
 });
 
 // Quit app when closed
