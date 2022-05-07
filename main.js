@@ -1,5 +1,5 @@
 const electron = require('electron');
-const { ipcMain, ipcRenderer } = require('electron');
+const { ipcMain } = require('electron');
 const url = require('url');
 const path = require('path');
 const https = require('https');
@@ -9,6 +9,7 @@ const { exec } = require("child_process");
 const {app, BrowserWindow, Menu} = electron;
 
 let mainWindow;
+var isWindowReady = false;
 
 
 
@@ -31,69 +32,43 @@ app.on('ready', function() {
             contextIsolation: true
         }
     });
+    // Load html into window
+    mainWindow.loadURL(url.format({
+        pathname: path.join(__dirname, 'index.html'),
+        protocol: 'file',
+        slashes: true
+    }));
+
+    mainWindow.maximize();
+
+    isWindowReady = true;
     
-    exec('py functions.py', (err, stdout, stderr) => {
+    /*exec('py functions.py', (err, stdout, stderr) => {
         if (err) {
             throw err;
         }
-    });
+    });*/
 });
 
-ipcMain.on('branch_update_main', () => {
-    console.log("branch updated to: Main")
+// Quit app when closed
+try {
+    mainWindow.on('close', function() {
+        app.quit();
+    });
+} catch (e) {
+    // Do nothing with error
+}
+
+// Catch branch updates
+ipcMain.on('branch_update_main', (event, arg) => {
+    console.log("branch updated to: " + arg);
 });
 ipcMain.on('branch_update_dev', () => {
-    console.log("branch updated to: Dev")
+    console.log("branch updated to: " + arg);
 });
 
-function doEverythingElse() {
 
-        mainWindow.maximize();
-        // Load html into window
-        mainWindow.loadURL(url.format({
-            pathname: path.join(__dirname, 'index.html'),
-            protocol: 'file',
-            slashes: true
-        }));
-
-    //    mainWindow.loadURL('https://rawcdn.githack.com/eddiefiv/apple-sauce/main/index.html');
-
-        // Quit app when closed
-        mainWindow.on('closed', function() {
-            app.quit();
-        })
-
-        // Build menu from template
-        const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
-
-        // Insert menu
-        Menu.setApplicationMenu(mainMenu);
-
-    // Create menu template
-    const mainMenuTemplate = [
-        {
-            label: 'File'
-        }
-    ];
-
-    // Add developer tools to environment if not in prod mode
-    if (process.env.NODE_ENV !== 'production') {
-        mainMenuTemplate.push({
-            label: 'Developer Tools',
-            submenu:[
-                {
-                    label: 'Toggle DevTools',
-                    click(item, focusedWindow) {
-                        focusedWindow.toggleDevTools();
-                    },
-                },
-                {
-                    role: 'reload'
-                }
-            ]
-        });
-    }
-}
+//    mainWindow.loadURL('https://rawcdn.githack.com/eddiefiv/apple-sauce/main/index.html');
 
 /*function downloadFiles(branch) {
     if (branch == "main") {

@@ -10,6 +10,7 @@
 
     <body id="body">
         <script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript" src="renderer.js"></script>
 
         <div id="modal-container" onclick="">
             <div class="modal-background">
@@ -45,8 +46,8 @@
                                         <p id="branch-dropdown-text" class="search-large">Main</p>
                                     </button>
                                     <ul id="branch-dropdown-items" class="dropdown-items">
-                                        <li id="main-branch" onclick="updateBranch('Main')">Main</li>
-                                        <li id="dev-branch" onclick="updateBranch('Dev')">Dev</li>
+                                        <li id="main-branch" onclick="changeBranch('Main')">Main</li>
+                                        <li id="dev-branch" onclick="changeBranch('Dev')">Dev</li>
                                     </ul>
                                 </div>
                             </div>
@@ -173,29 +174,19 @@
                         </div>
                         <div class="time">
                             <div class="current">0:00</div>
-                            <div class="divider">/</div>
-                            <div class="length"></div>
+                            <div class="divider">-</div>
+                            <div class="length">4:20</div>
                         </div>
                     </div>
                 </div>
             </div>
             </div>
         </div>
+        <script>
+            import { updateBranch } from './renderer.js';
 
-        <script type="text/javascript">
-            const electron = require('electron');
-            const {ipcRenderer} = require('electron');
-
-            function updateBranch(branch) {
-                alert("boo");
-                document.getElementById("branch-dropdown-text").innerHTML = branch;
-
-                if (branch == "Main") {
-                    ipcRenderer.send('branch_update_main');
-                }
-                else if (branch == "Dev") {
-                    ipcRenderer.send('branch_update_dev');
-                }
+            function changeBranch(branch) {
+                updateBranch(branch);
             }
         </script>
     </body>
